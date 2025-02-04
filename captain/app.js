@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/users');
+const captainRoutes = require("./routes/captain")
 const cookieParser = require('cookie-parser');
 const connect = require('./DB/connect');
 connect();
@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
  
 
-app.use("/",userRoutes) ;
+app.use("/",captainRoutes) ;
 
 
 module.exports = app;

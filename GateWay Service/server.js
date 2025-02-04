@@ -5,9 +5,8 @@ dotenv.config();
 const expressProxy = require('express-http-proxy');
 const PORT = process.env.PORT ;
 
-app.use("/users", expressProxy('http://localhost:3001', {
-    proxyReqPathResolver: req => `/users${req.url}`
-}));
+app.use("/users", expressProxy('http://localhost:3001'));
+app.use("/captain", expressProxy('http://localhost:3002'));
 
 app.listen(PORT, () =>{ 
     console.log(`Server is running on port ${PORT}`) 
