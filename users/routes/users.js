@@ -10,5 +10,6 @@ router.post('/register', authControllers.register);
 router.post('/login', authControllers.login);
 router.get('/logout', authControllers.logout);
 router.get('/profile',middleware.protected ,authControllers.profile);
+router.get("/accepted-ride",middleware.protected,authControllers.acceptedRide);
 
 module.exports = router;

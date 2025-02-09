@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/users');
 const cookieParser = require('cookie-parser');
 const connect = require('./DB/connect');
+const rabbitmq = require("./services/rabbit")
 connect();
+rabbitmq.connect();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
